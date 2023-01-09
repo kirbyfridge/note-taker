@@ -34,13 +34,13 @@ const getNotes = () =>
   });
 
 const saveNote = (note) =>
-  fetch('/api/notes', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(note),
-  });
+fetch('/api/notes', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify(note),
+});
 
 const deleteNote = (id) =>
   fetch(`/api/notes/${id}`, {
@@ -103,7 +103,7 @@ const handleNoteView = (e) => {
 };
 
 // Sets the activeNote to and empty object and allows the user to enter a new note
-const handleNewNoteView = (e) => {
+const handleNewNoteView = (e) => { 
   activeNote = {};
   renderActiveNote();
 };
@@ -155,7 +155,7 @@ const renderNoteList = async (notes) => {
   };
 
   if (jsonNotes.length === 0) {
-    noteListItems.push(createLi('No saved Notes', false));
+    noteListItems.push(createLi('no saved notes', false));
   }
 
   jsonNotes.forEach((note) => {
@@ -179,5 +179,19 @@ if (window.location.pathname === '/notes') {
   noteTitle.addEventListener('keyup', handleRenderSaveBtn);
   noteText.addEventListener('keyup', handleRenderSaveBtn);
 }
+
+noteTitle.addEventListener("click", function() {
+  if (activeNote.id) {
+    noteTitle.removeAttribute('readonly');
+    noteText.removeAttribute('readonly');
+  }
+});
+
+noteText.addEventListener("click", function() {
+  if (activeNote.id) {
+    noteTitle.removeAttribute('readonly');
+    noteText.removeAttribute('readonly');
+  }
+});
 
 getAndRenderNotes();
