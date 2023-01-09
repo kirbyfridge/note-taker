@@ -73,7 +73,7 @@ Email:
 
 You can view the deployed application at the link below. 
 
-🔗 insert link here
+🔗 https://note-taker-aah.herokuapp.com/
 
 
 ## License
