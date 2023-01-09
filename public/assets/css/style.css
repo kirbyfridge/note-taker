@@ -1,8 +1,51 @@
+:root {
+  --pink: #FBC7D4;
+  --purple: #9796F0; 
+  --black: #252525;
+}
+
 html,
 body {
+  font-family: 'Montserrat', sans-serif;
   height: 100%;
   margin: 0;
   padding: 0;
+}
+
+.text-bg-dark {
+  background-color: #252525 !important;
+}
+
+.container {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.navbar-brand,
+.display-4,
+.note-title {
+  font-weight: 700 !important;
+  letter-spacing: 2px !important;
+}
+
+.mt-4,
+.note-textarea,
+.list-item-title {
+  font-weight: 400 !important;
+  letter-spacing: 2px !important;
+}
+
+.btn-primary {
+  background-color: #FBC7D4 !important;
+  border: none !important;
+}
+
+.btn-primary:hover {
+  background-color: #B08BB5 !important;
+  border: none !important;
 }
 
 .save-note {
